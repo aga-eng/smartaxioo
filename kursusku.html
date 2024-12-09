@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Flexy lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Flexy admin lite design, Flexy admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description" content="Flexy Admin Lite is powerful and clean admin dashboard template, inspired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>SmartAxioo || Kursusku</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/SMART.png">
+    <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0sF5X3F5S3z5z5Z5z5z5z5z5z5z5z5z5z5z5z5z5z5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css">
+    <link href="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'YourPrimaryFont', 'FallbackFont', sans-serif;
+        }
+        .card {
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+        }
+        
+        .card-img-top {
+            width: 100%;
+            height: 200px; /* Adjust height as needed */
+            object-fit: cover; /* Ensures the image covers the area */
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        
+        .card-text {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .button-container {
+            display: flex;
+            gap: 8px; /* Jarak antar tombol */
+          }
+        
+          .btn {
+            flex: 1; /* Membuat kedua tombol memiliki lebar sama */
+            text-align: center;
+          }
+        
+          @media (max-width: 768px) {
+            /* Untuk layar yang lebih kecil, tombol akan turun ke bawah */
+            .button-container {
+              flex-direction: column;
+            }
+          }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- <p id="selected-class" class="text-lg font-medium hidden"></p> -->
+    
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin6">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-header" data-logobg="skin6">
+                    <a class="navbar-brand" href="home.html">
+                        <b class="logo-icon">
+                            <img src="assets/images/smart1.png" alt="Flexy Admin Logo" class="dark-logo" />
+                            <img src="assets/images/smart1.png" alt="Flexy Admin Logo" class="light-logo" />
+                        </b>
+                        <span class="logo-text">
+                           <strong>Smart</strong> Axioo
+                        </span>
+                    </a>
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav float-start me-auto">
+                        <li class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-magnify me-1"></i> <span class="font-16">Search</span></a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter">
+                                <a class="srh-btn"><i class="mdi mdi-window-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav float-end">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/users/th.jpeg" alt="User Profile" class="rounded-circle" width="31">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="logout()">
+                                    <i class="ti-user m-r-5 m-l-5"></i> Logout
+                                </a>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="home.html" aria-expanded="false">
+                            <i class="mdi mdi-home"></i>
+                            <span class="hide-menu">Dashboard</span>
+                        </a>
+                    </li>
+                   
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0);" aria-expanded="false">
+                            <i class="mdi mdi-receipt"></i>
+                            <span class="hide-menu">Transaksi</span>
+                        </a>
+                        <ul class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a href="topup.html" class="sidebar-link">
+                                    <i class="mdi mdi-cash-multiple"></i> <!-- Icon for TopUp Dana -->
+                                    <span class="hide-menu">TopUp Dana</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="pembayaran.html" class="sidebar-link">
+                                    <i class="mdi mdi-credit-card"></i> <!-- Icon for Pembayaran -->
+                                    <span class="hide-menu">Pembayaran</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="tabungan.html" class="sidebar-link">
+                                    <i class="mdi mdi-wallet"></i> <!-- Icon for Pembayaran -->
+                                    <span class="hide-menu">Tabungan</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0);" aria-expanded="false">
+                            <i class="mdi mdi-database"></i>
+                            <span class="hide-menu">Data Master</span>
+                        </a>
+                        <ul class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a href="absen.html" class="sidebar-link">
+                                    <i class="mdi mdi-account-check"></i> <!-- Icon for Data Absensi -->
+                                    <span class="hide-menu">Data Absensi</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="data-kursus.html" class="sidebar-link">
+                                    <i class="mdi mdi-book-open-variant"></i> <!-- Icon for Data Kursus -->
+                                    <span class="hide-menu">Data Kursus</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="poin.html" class="sidebar-link">
+                                    <i class="mdi mdi-alert-circle"></i> <!-- Icon for Riwayat Pelanggaran -->
+                                    <span class="hide-menu">Riwayat Point</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="kursusku.html" aria-expanded="false">
+                            <i class="mdi mdi-school"></i>
+                            <span class="hide-menu">KursusKu</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="javascript:void(0);" class="sidebar-link" onclick="logout()">
+                            <i class="mdi mdi-logout"></i>
+                            <span class="hide-menu">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 d-flex align-items-center">
+                              <li class="breadcrumb-item"><a href="home.html" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Kursusku</li>
+                            </ol>
+                          </nav>
+                        <h1 class="mb-0 fw-bold">Kursusku</h1> 
+                    </div>
+                    <div class="col-6">
+                        <div class="text-end upgrade-btn">
+                            <a href="data-kursus.html" class="btn btn-primary text-white"
+                                >Tambah Kursusku</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+           
+            <div class="container-fluid">
+                <div id="successAlert" class="alert alert-success d-none"></div>
+                <div id="errorAlert" class="alert alert-danger d-none"></div>
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Table -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- title -->
+                                <div class="text">
+                                    <div>
+                                        <h4 class="card-title">Filter Data Kursusku</h4>
+                                        <h6 class="card-subtitle">filter data berdasarkan judul</h6>
+                                    </div>
+                                    </div>
+                                        <input type="text" id="filter-judul" class="form-control" placeholder="Ketik judul materi">
+                             
+                                    </div>
+                                </div>  
+                                <!-- title -->
+                                <div id="db-data" class="row">
+                                    <!-- The cards will be dynamically inserted here -->
+                                </div>
+                    </div>
+                </div>
+            
+            </div>
+ 
+            <footer class="footer text-center">
+                SmartAxioo SMK Muhammadiyah 1 Pringsewu Designed and Developed by <a href="https://jeriwilaga.github.io/Portofolio/">AgaDevelopment</a>.
+            </footer>
+          
+        </div>
+       
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="passwordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="passwordModalLabel">Masukkan Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="password" id="passwordInput" class="form-control" placeholder="Silakan isi password">
+                </div>
+                <div class ="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary" id="submitPassword">Gabung Kelas</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.js"></script>
+</body>
+<script>
+    let currentLink = ''; // Variabel global untuk menyimpan link saat ini
+    let currentPassword = ''; // Variabel global untuk menyimpan password saat ini
+    let currentCourseId = ''; // Variabel global untuk menyimpan ID kursus saat ini
+    let fullData = []; // Variabel untuk menyimpan semua data yang diambil
+    
+    const scriptUrl = `https://script.google.com/macros/s/AKfycbxEcN00BTCmZsyIBNe7ajXigA_nGp4Nmp5tgVAw4_g0s0GpUgssXHyw1O-2r6YAapOH/exec?id_siswa=${localStorage.getItem('id_siswa')}`;
+    
+    const idSiswa = localStorage.getItem('id_siswa');
+    
+    if (!idSiswa) {
+        console.error('id_siswa tidak ditemukan di localStorage');
+    } else {
+        fetch(scriptUrl)
+            .then(response => {
+                if (!response.ok) throw new Error('Respon jaringan tidak baik');
+                return response.json();
+            })
+            .then(data => {
+                if (Array.isArray(data) && data.length > 0) {
+                    fullData = data; // Simpan data lengkap di sini
+                    renderData(fullData); // Render semua data awal
+                } else {
+                    console.log('Tidak ada data ditemukan untuk id_siswa saat ini.');
+                }
+            })
+            .catch(error => {
+                console.error('Terjadi masalah dengan operasi fetch:', error);
+            });
+    }
+    
+    // Fungsi untuk merender data ke DOM
+    function renderData(data) {
+        const dbDataElement = document.getElementById('db-data');
+        dbDataElement.innerHTML = ''; // Bersihkan DOM sebelum merender ulang data
+    
+        data.forEach(item => {
+            const html = `
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="${item.foto || 'default-image.jpg'}" class="card-img-top" alt="${item.judul_materi}">
+                        <div class="card-body">
+                            <h5 class="card-title">${item.judul_materi}</h5>
+                            <p class="card-text">${item.ringkasan}</p>
+                           <div class="button-container">
+                            <a href="detail.html?id=${item.id_materi}" class="btn btn-primary">Lihat Materi</a>
+                            <button class="btn btn-danger" onclick="deleteMateri('${item.id_kursusku}')">Hapus Materi</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            dbDataElement.innerHTML += html;
+        });
+    }
+    
+    // Tangani penghapusan materi dengan konfirmasi
+    function deleteMateri(id_kursusku) {
+        const confirmDelete = confirm('Apakah Anda yakin ingin menghapus materi ini?');
+        if (confirmDelete) {
+            fetch(`https://script.google.com/macros/s/AKfycbyRDCEy2T2Qah_KxXO4J8aixnDZZ-LvZC9vppu6cDLImzh4Q4Gp7n9vAQRVc54fl1mK/exec?action=delete&id_kursusku=${id_kursusku}`, { method: 'GET' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === 'success') {
+                        alert('Materi berhasil dihapus');
+                        location.reload();
+                    } else {
+                        alert('Gagal menghapus materi');
+                    }
+                })
+                .catch(error => {
+                    console.error('Terjadi kesalahan saat menghapus materi:', error);
+                    alert('Terjadi kesalahan!');
+                });
+        }
+    }
+    
+    // Tambahkan event listener untuk filter
+    document.getElementById('filter-judul').addEventListener('input', applyFilters);
+    
+    function applyFilters() {
+        const filterJudul = document.getElementById('filter-judul').value.toLowerCase();
+    
+        const filteredData = fullData.filter(item => {
+            return item.judul_materi?.toLowerCase().includes(filterJudul);
+        });
+    
+        renderData(filteredData);
+    }
+    
+</script>
+
+
+    
+<script>
+    function logout() {
+        const username = localStorage.getItem('username'); // Get the username from local storage
+
+        // Check if username exists
+        if (username) {
+            const deleteUrl = `https://script.google.com/macros/s/AKfycbwta-OMZVE6S1JOfohM1kfWtoy1LW0mJzLdlZh_cO85oKzUhj7gEiy9PpdXNh8T8I0v/exec?username=${encodeURIComponent(username)}&action=delete`; // Replace with your actual Google Apps Script URL
+
+            fetch(deleteUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Data deleted successfully:', data);
+                    // Clear the history from local storage
+                    localStorage.removeItem('history');
+                    localStorage.removeItem('username');
+                    localStorage.removeItem('id_siswa');
+
+                    // Redirect to index.html
+                    window.location.href = 'index.html'; // Change 'index.html' to your actual homepage if different
+                })
+                .catch(error => {
+                    console.error('Error deleting data:', error);
+                    // Optionally, clear local storage and redirect even if deletion fails
+                    localStorage.removeItem('history');
+                    localStorage.removeItem('username');
+                    localStorage.removeItem('id_siswa');
+                    window.location.href = 'index.html';
+                });
+        } else {
+            // If no username is found, just redirect
+            localStorage.removeItem('history');
+            localStorage.removeItem('username');
+            localStorage.removeItem('id_siswa');
+            window.location.href = 'index.html';
+        }
+    }
+</script>
+
+
+     
+</html>

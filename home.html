@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Flexy lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Flexy admin lite design, Flexy admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description" content="Flexy Admin Lite is powerful and clean admin dashboard template, inspired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>SmartAxioo ||  Dashboard</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/SMART.png">
+    <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM0sF5X3F5S3z5z5Z5z5z5z5z5z5z5z5z5z5z5z5z5z5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css">
+    <link href="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'YourPrimaryFont', 'FallbackFont', sans-serif;
+        }
+    </style>
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+        <!-- <p id="selected-class" class="text-lg font-medium hidden"></p> -->
+    
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin6">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <div class="navbar-header" data-logobg="skin6">
+                    <a class="navbar-brand" href="home.html">
+                        <b class="logo-icon">
+                            <img src="assets/images/smart1.png" alt="Flexy Admin Logo" class="dark-logo" />
+                            <img src="assets/images/smart1.png" alt="Flexy Admin Logo" class="light-logo" />
+                        </b>
+                        <span class="logo-text">
+                           <strong>Smart</strong> Axioo
+                        </span>
+                    </a>
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav float-start me-auto">
+                        <li class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-magnify me-1"></i> <span class="font-16">Search</span></a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter">
+                                <a class="srh-btn"><i class="mdi mdi-window-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav float-end">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/images/users/th.jpeg" alt="User Profile" class="rounded-circle" width="31">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="javascript:void(0)" onclick="logout()">
+                                    <i class="ti-user m-r-5 m-l-5"></i> Logout
+                                </a>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="home.html" aria-expanded="false">
+                            <i class="mdi mdi-home"></i>
+                            <span class="hide-menu">Dashboard</span>
+                        </a>
+                    </li>
+                   
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0);" aria-expanded="false">
+                            <i class="mdi mdi-receipt"></i>
+                            <span class="hide-menu">Transaksi</span>
+                        </a>
+                        <ul class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a href="topup.html" class="sidebar-link">
+                                    <i class="mdi mdi-cash-multiple"></i> <!-- Icon for TopUp Dana -->
+                                    <span class="hide-menu">TopUp Dana</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="pembayaran.html" class="sidebar-link">
+                                    <i class="mdi mdi-credit-card"></i> <!-- Icon for Pembayaran -->
+                                    <span class="hide-menu">Pembayaran</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="tabungan.html" class="sidebar-link">
+                                    <i class="mdi mdi-wallet"></i> <!-- Icon for Pembayaran -->
+                                    <span class="hide-menu">Tabungan</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0);" aria-expanded="false">
+                            <i class="mdi mdi-database"></i>
+                            <span class="hide-menu">Data Master</span>
+                        </a>
+                        <ul class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a href="absen.html" class="sidebar-link">
+                                    <i class="mdi mdi-account-check"></i> <!-- Icon for Data Absensi -->
+                                    <span class="hide-menu">Data Absensi</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="data-kursus.html" class="sidebar-link">
+                                    <i class="mdi mdi-book-open-variant"></i> <!-- Icon for Data Kursus -->
+                                    <span class="hide-menu">Data Kursus</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="poin.html" class="sidebar-link">
+                                    <i class="mdi mdi-alert-circle"></i> <!-- Icon for Riwayat Pelanggaran -->
+                                    <span class="hide-menu">Riwayat Point</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="kursusku.html" aria-expanded="false">
+                            <i class="mdi mdi-school"></i>
+                            <span class="hide-menu">KursusKu</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="javascript:void(0);" class="sidebar-link" onclick="logout()">
+                            <i class="mdi mdi-logout"></i>
+                            <span class="hide-menu">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="page-wrapper">
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 d-flex align-items-center">
+                                <li class="breadcrumb-item"><a href="home.html" class="link"><i class="mdi mdi-home-outline fs-4"></i></a></li>
+                                <li class="breadcrumb-item active" aria-current="page">
+                                    Dashboard
+                                </li>
+                            </ol>
+                        </nav>
+                        <h1 class="mb-0 fw-bold">Dashboard</h1>
+                    </div>
+                    <div class="col-6">
+                        <div class="text-end upgrade-btn">
+                            <a href="rekap.html" class="btn btn-primary text-white">Download Absen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="stats-containerr">
+                    </div>
+                    <!-- ATM Style Card -->
+                     <div id="stats-container">
+    
+                     <!-- New Card for Point Pelanggaran -->
+                     <div class="col-lg-4">
+                        <div class="card">
+                            
+                        </div>
+                    </div>
+                        
+                    </div>
+                   
+                    <!-- New Card for Point Pelanggaran -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body " style="background-color: rgb(241, 1, 1); border-radius: 10px;">
+                                <h3 class="card-title" style="color: aliceblue;">Point Pelanggaran</h3>
+                                <h4 class="card-subtitle" style="color: aliceblue;" id="pelanggaran-points">...</h4>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- New Card for Point Penghargaan -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body" style="background-color: rgb(0, 128, 111); border-radius: 10px;;">
+                                <h3 class="card-title" style="color: aliceblue;">Point Penghargaan</h3>
+                                <h4 class="card-subtitle" style="color: aliceblue;" id="penghargaan-points">...</h4>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- New Card for Total Poin -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body" style="background-color: rgb(6, 138, 76); border-radius: 10px;;">
+                                <h3 class="card-title" style="color: aliceblue;">Total Poin</h3>
+                                <h4 class="card-subtitle" style="color: aliceblue;" id="total-points">...</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">List Absen</h4>
+                                <h6 class="card-subtitle">ini adalah list absen hari ini</h6>
+                                <div id="tats-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+             <br>
+
+            <footer class="footer text-center">
+                SmartAxioo SMK Muhammadiyah 1 Pringsewu Designed and Developed by <a href="https://jeriwilaga.github.io/Portofolio/">AgaDevelopment</a>.
+            </footer>
+        </div>
+    </div>
+
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="js/pages/dashboards/dashboard1.js"></script>
+    <script>
+        // Check if the user is logged in
+        if (!localStorage.getItem('username')) {
+            window.location.href = 'index.html'; // Redirect to login page
+        }
+    
+        // Prevent user from going back to the previous page
+        window.history.replaceState(null, '', window.location.href);
+        window.onpopstate = function () {
+            window.history.go(1);
+        };
+
+         // Get the username from localStorage
+    const username = localStorage.getItem('username') || 'test_user';
+    document.getElementById('usernameHeader').textContent = username;
+    
+    </script>
+    
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxAj3A3dl814SPyJt2jeZhfqzLuCrigZ-ka9c2XjPqpM_0sVShwAgDu3IovVj5nzMs/exec';
+        const statsContainer = document.querySelector('#tats-container');
+
+        document.addEventListener('DOMContentLoaded', loadData);
+
+        function loadData() {
+            const idSiswa = localStorage.getItem('id_siswa') || ''; // Gunakan id_siswa dari localStorage
+            console.log('id_siswa from localStorage:', idSiswa); // Debugging line
+
+            if (!idSiswa) {
+                console.error('No id_siswa selected!'); // Error log if empty
+                statsContainer.innerHTML = '<p>No id_siswa selected yet.</p>'; // Inform user
+                return;
+            }
+
+            statsContainer.innerHTML = '';
+
+            fetch(`${scriptURL}?action=read&id_siswa=${encodeURIComponent(idSiswa)}`) // Gunakan id_siswa di URL fetch
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Fetched data:', data);
+
+                    if (data.length === 0) {
+                        console.log('Tidak Ada Absen Hari ini');
+                        statsContainer.innerHTML = '<p>Tidak Ada Absen Hari ini</p>';
+                        return;
+                    }
+
+                    data.forEach(stat => {
+                        const alertElement = document.createElement('div');
+                        
+                        // Tentukan warna berdasarkan keterangan
+                        let alertColor = 'warning'; // Default color: yellow (untuk absen pulang)
+                        if (stat.keterangan === 'absen masuk') {
+                            alertColor = 'success'; // Green color for 'Masuk'
+                        }
+                    
+                        // Menambahkan kelas untuk alert
+                        alertElement.classList.add('alert', `alert-${alertColor}`, 'alert-dismissible', 'fade', 'show');
+                        alertElement.setAttribute('role', 'alert');
+                    
+                       // Format jam yang diterima menjadi format 12 jam
+                        const formattedTime = formatTime(stat.jam);
+
+                        // Konten Alert: hanya menampilkan jam
+                        alertElement.innerHTML = `
+                            <strong>Jam:</strong> ${formattedTime || '-'} <br>
+                            ${stat.keterangan}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        `;
+
+                        statsContainer.appendChild(alertElement); // Menambahkan alert ke container
+                    });
+
+                    // Fungsi untuk mengonversi waktu ISO atau 24 jam ke format 12 jam dengan AM/PM
+                    function formatTime(time24) {
+                        if (!time24) return '-';
+                        
+                        // Cek apakah waktu dalam format ISO atau string waktu lain
+                        const date = new Date(time24);
+                        
+                        if (isNaN(date.getTime())) {
+                            // Jika waktu tidak valid, return '-'
+                            return '-';
+                        }
+                        
+                        // Format waktu ke dalam 12 jam dengan AM/PM
+                        let hours = date.getHours();
+                        let minutes = date.getMinutes();
+                        let seconds = date.getSeconds();
+                        const ampm = hours >= 12 ? 'PM' : 'AM';
+                        
+                        hours = hours % 12;
+                        hours = hours ? hours : 12; // Jam 0 menjadi 12
+                        minutes = minutes < 10 ? '0' + minutes : minutes;
+                        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                        return `${hours}:${minutes}:${seconds} ${ampm}`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading data!', error);
+                    statsContainer.innerHTML = '<p>Error loading data. Please try again later.</p>';
+                });
+        }
+
+    </script>
+    
+ 
+    <script>
+        function logout() {
+            const username = localStorage.getItem('username'); // Get the username from local storage
+    
+            // Check if username exists
+            if (username) {
+                const deleteUrl = `https://script.google.com/macros/s/AKfycbwta-OMZVE6S1JOfohM1kfWtoy1LW0mJzLdlZh_cO85oKzUhj7gEiy9PpdXNh8T8I0v/exec?username=${encodeURIComponent(username)}&action=delete`; // Replace with your actual Google Apps Script URL
+    
+                fetch(deleteUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Data deleted successfully:', data);
+                        // Clear the history from local storage
+                        localStorage.removeItem('history');
+                        localStorage.removeItem('username');
+                        localStorage.removeItem('id_siswa');
+    
+                        // Redirect to index.html
+                        window.location.href = 'index.html'; // Change 'index.html' to your actual homepage if different
+                    })
+                    .catch(error => {
+                        console.error('Error deleting data:', error);
+                        // Optionally, clear local storage and redirect even if deletion fails
+                        localStorage.removeItem('history');
+                        localStorage.removeItem('username');
+                        localStorage.removeItem('id_siswa');
+                        window.location.href = 'index.html';
+                    });
+            } else {
+                // If no username is found, just redirect
+                localStorage.removeItem('history');
+                localStorage.removeItem('username');
+                localStorage.removeItem('id_siswa');
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+
+
+<script>
+    const scp = 'https://script.google.com/macros/s/AKfycbzg9-Mpt4BlE37GCTKFfg0WoP8N7PFHiLJ_Zq1b8xjIZBtqEjKOvlJa9AelA5M5IoA/exec';
+    const container = document.querySelector('#stats-container');
+    
+    document.addEventListener('DOMContentLoaded', loadData);
+    
+    function loadData() {
+        const username = localStorage.getItem('username') || ''; // Use username instead of selectedClass
+        console.log('Username from localStorage:', username); // Debugging line
+    
+        if (!username) {
+            console.error('No username selected!'); // Error log if empty
+            container.innerHTML = '<p>No username selected yet.</p>'; // Inform user
+            return;
+        }
+    
+        container.innerHTML = '';
+    
+        fetch(`${scp}?action=read&username=${encodeURIComponent(username)}`) // Use username in the fetch URL
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Fetched data:', data);
+    
+                if (!data || data.length === 0) {
+                    console.log('Tidak Ada Absen Hari ini');
+                    container.innerHTML = '<p>Tidak Ada Absen Hari ini</p>';
+                    return;
+                }
+    
+                // Displaying data in the card format
+                data.forEach(item => {
+                    // Simpan item.id ke localStorage
+                    localStorage.setItem("id_siswa", item.id);
+    
+                    // Format the total amount as Rupiah
+                    const formattedTotal = new Intl.NumberFormat('id-ID', {
+                        style: 'currency',
+                        currency: 'IDR',
+                    }).format(item.total);
+    
+                    // Update the card footer to use the formatted total
+                    container.innerHTML += `
+                        <div class="row d-flex justify-content-center">
+                        <div class="col-lg-12 d-flex align-items-stretch">
+                            <div class="card atm-card" style="background: linear-gradient(135deg, #1e4db7, #297efd); color: white; border-radius: 15px; padding: 7px; width: 100%; position: relative;">
+                                <div class="card-body">
+                                    <h4 class="card-title" style="color: aliceblue;">Card Axioo</h4>
+                                    <div class="atm-details">
+                                        <h1 class="card-subtitle mt-2 mb-2" style="color: rgb(182, 182, 182); font-weight: bold;">${item.id} ${item.nisn}</h1>
+                                        <p class="mb-0">${item.owner} / Angkatan #${item.batch}</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                      
+                    </div>
+                    `;
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                container.innerHTML = '<p>Error fetching data. Please try again later.</p>';
+            });
+    }
+    
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const username = localStorage.getItem('username'); // Retrieve username from local storage
+
+    if (username) {
+        // Construct the URL with the username
+        const pelanggaranUrl = `https://script.google.com/macros/s/AKfycbwqgmPVdcHV0_03Fo3X4VdGedANIp18D72OUBx0QlatTuWPY3o1Xq4pCmDzu3DgAZLw/exec?username=${encodeURIComponent(username)}`;
+        
+        // Fetch pelanggaran points
+        fetch(pelanggaranUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Check if data is valid and contains the expected properties
+                if (data && typeof data.pelanggaran !== 'undefined' && typeof data.penghargaan !== 'undefined') {
+                    // Display the pelanggaran points
+                    console.log(`Pelanggaran points for ${username}: ${data.pelanggaran}`);
+                    
+                    // Display the penghargaan points
+                    console.log(`Penghargaan points for ${username}: ${data.penghargaan}`);
+                    
+                    // Calculate total points
+                    const totalPoints = data.pelanggaran - data.penghargaan;
+                    console.log(`Total points for ${username}: ${totalPoints}`);
+
+                    // Update the HTML elements
+                    const pelanggaranElement = document.getElementById('pelanggaran-points');
+                    if (pelanggaranElement) {
+                        pelanggaranElement.textContent = data.pelanggaran +" Point";
+                    } else {
+                        console.error('Element with ID "pelanggaran-points" not found.');
+                    }
+                    
+                    const penghargaanElement = document.getElementById('penghargaan-points');
+                    if (penghargaanElement) {
+                        penghargaanElement.textContent = data.penghargaan +" Point";
+                    } else {
+                        console.error('Element with ID "penghargaan-points" not found.');
+                    }
+
+                    // Update the total points element
+                    const totalPointsElement = document.getElementById('total-points');
+                    if (totalPointsElement) {
+                        totalPointsElement.textContent = totalPoints +" Point";
+                    } else {
+                        console.error('Element with ID "total-points" not found.');
+                    }
+                } else {
+                    console.error('Unexpected data format:', data);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    } else {
+        console.error('No username found in local storage.');
+        // Optionally, you can display a message to the user
+        const messageElement = document.getElementById('message');
+        if (messageElement) {
+            messageElement.textContent = 'Username not found. Please log in.';
+        }
+    }
+});
+</script>
+<script>
+    const scpp = 'https://script.google.com/macros/s/AKfycbxprdCq9A7MhBnVUwSxZ7A1LgKMAsETBCiD-Th09mGV9rco2eIIUnCbb4Y23T1lGOWh/exec';
+    const containerr = document.querySelector('#stats-containerr');
+    
+    document.addEventListener('DOMContentLoaded', loadData);
+    
+    // Fungsi untuk memuat data dari "id_siswa" di lokalStorage
+function loadData() {
+   const idSiswa = localStorage.getItem('id_siswa') || ''; // Ambil id_siswa dari localStorage
+   console.log('id_siswa from localStorage:', idSiswa);
+ 
+   if (!idSiswa) {
+     console.error('No id_siswa selected!');
+     containerr.innerHTML = '<p>No id_siswa selected yet.</p>';
+     return;
+   }
+ 
+   containerr.innerHTML = '';
+ 
+   fetch(`${scpp}?action=read&id_siswa=${encodeURIComponent(idSiswa)}`)
+     .then(response => {
+       if (!response.ok) {
+         throw new Error('Network response was not ok');
+       }
+       return response.json();
+     })
+     .then(data => {
+       console.log('Fetched data:', data);
+ 
+       if (!data || data.length === 0) {
+         console.log('Tidak Ada Absen Hari ini');
+         containerr.innerHTML = '<p>Tidak Ada Absen Hari ini</p>';
+         return;
+       }
+ 
+       data.forEach(item => {
+         const formattedTotal = new Intl.NumberFormat('id-ID', {
+           style: 'currency',
+           currency: 'IDR',
+         }).format(item.topup);
+ 
+         containerr.innerHTML += ` 
+           <div class="col-lg-12">
+             <div class="card atm-card" style="border-radius: 15px; text-align:center;">
+               <div class="card-body">
+                 <div class="atm-details">
+                   <h1 class="card-subtitle mt-2 d-none" id="id_siswa" style="color: rgb(182, 182, 182); font-weight: bold;">${item.id_siswa}</h1>
+                   <p>Saldo Anda Tersisa</p><h1 class="mb-0" style="text-align:center;color:#1e4db7; font-weight: bold;">${formattedTotal}</h1>
+                 </div>
+               </div>
+             </div>
+           </div>
+         `;
+       });
+     })
+     .catch(error => {
+       console.error('Error fetching data:', error);
+       containerr.innerHTML = '<p>Error fetching data. Please try again later.</p>';
+     });
+ }
+   </script>
+</body>
+</html>
